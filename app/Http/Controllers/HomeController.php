@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Homebanner;
+use App\Homebannerimg;
 
 class HomeController extends Controller
 {
@@ -27,6 +29,25 @@ class HomeController extends Controller
         return view('admin.home.home',[
             'users' => User::all(),
         ]);
+    }
+
+    public function banner()
+    {
+        return view('admin.home.banner',[
+            'banner' => Homebanner::find(1),
+            'banner_photos' => Homebannerimg::all(),
+        ]);
+    }
+    public function banneredit()
+    {
+        return view('admin.home.banneredit',[
+            'banner' => Homebanner::find(1),
+        ]);
+    }
+    public function bannerupdate(Request $request,$id)
+    {
+        Homebanner::find(1)->update($request->except("_token"));
+        return redirect('/home/banner')->with('update_status', 'Banner content updated !');
     }
     public function userdelete($id){
 

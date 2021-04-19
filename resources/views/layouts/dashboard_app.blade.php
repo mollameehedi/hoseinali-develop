@@ -9,14 +9,14 @@
     <title>@yield('title', 'Ecommerce')</title>
 
     <!-- vendor css -->
-    
+
     <link href="{{ asset('dashboard_asset') }}/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/Ionicons/css/ionicons.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/highlightjs/github.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/datatables/jquery.dataTables.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/select2/css/select2.min.css" rel="stylesheet">
-    <link rel="icon" href="{{ asset('dashboard_asset') }}/img/favicon.png" type="image/gif" sizes="16x16"> 
+    <link rel="icon" href="{{ asset('dashboard_asset') }}/img/favicon.png" type="image/gif" sizes="16x16">
 
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{ asset('dashboard_asset') }}/css/starlight.css">
@@ -43,33 +43,28 @@
             <span class="menu-item-label">Dashboard</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        <a href="widgets.html" class="sl-menu-link">
-          <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
-            <span class="menu-item-label">Cards &amp; Widgets</span>
-          </div><!-- menu-item -->
-        </a><!-- sl-menu-link -->
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
             <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
-            <span class="menu-item-label">Charts</span>
+            <span class="menu-item-label">home</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
         <ul class="sl-menu-sub nav flex-column">
-          <li class="nav-item"><a href="chart-morris.html" class="nav-link">Morris Charts</a></li>
-          <li class="nav-item"><a href="chart-flot.html" class="nav-link">Flot Charts</a></li>
-          <li class="nav-item"><a href="chart-chartjs.html" class="nav-link">Chart JS</a></li>
-          <li class="nav-item"><a href="chart-rickshaw.html" class="nav-link">Rickshaw</a></li>
-          <li class="nav-item"><a href="chart-sparkline.html" class="nav-link">Sparkline</a></li>
+          <li class="nav-item"><a href="{{ route('home.banner') }}" class="nav-link">Banner</a></li>
         </ul>
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-gear-outline tx-24"></i>
-            <span class="menu-item-label">Forms</span>
+            <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+            <span class="menu-item-label">Books</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
+        <ul class="sl-menu-sub nav flex-column">
+          <li class="nav-item"><a href="{{ route('book.my.book') }}" class="nav-link">My Books</a></li>
+          <li class="nav-item"><a href="{{ route('book.book.list') }}" class="nav-link">Book List</a></li>
+        </ul>
+
       </div><!-- sl-sideleft-menu -->
 
       <br>
@@ -176,7 +171,7 @@
 
 
 
-    
+
 <script src="{{ asset('dashboard_asset') }}/lib/jquery/jquery.js"></script>
 <script src="{{ asset('dashboard_asset') }}/lib/popper.js/popper.js"></script>
 <script src="{{ asset('dashboard_asset') }}/lib/bootstrap/bootstrap.js"></script>

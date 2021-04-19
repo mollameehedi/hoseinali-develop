@@ -35,7 +35,7 @@
                     <td>{{ $user->created_at }}</td>
                     <td><a href="{{ route('user.delete',$user->id) }}" class="btn btn-danger">delete</a></td>
                   </tr>
-                       
+
                   @endforeach
                 </tbody>
               </table>
@@ -44,20 +44,4 @@
         </div>
     </div><!-- sl-pagebody -->
   </div><!-- sl-mainpanel -->
-@endsection
-@section('footer_scripts')
-<script type="text/javascript">
-  $(document).ready(function(){
-      $('#product_table').DataTable();
-      ClassicEditor
-                          .create( document.querySelector( '#product_long_description' ) )
-                          .then( editor => {
-                                  console.log( editor );
-                          } )
-                          .catch( error => {
-                                  console.error( error );
-                          } );
-  })
-</script>
- 
 @endsection

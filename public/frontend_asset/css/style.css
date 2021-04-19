@@ -1,0 +1,725 @@
+/* 
+------------------
+Template Name: Husein Ali | Book Selling Website
+Author: Developer Zahid
+Author Website: https://developer-zahid-portfolio.netlify.app
+Author Email: coderexpertzahid@gmail.com
+Version: 1.00
+------------------
+
+----------------
+Table of Content
+----------------
+1.Google Fonts Link
+2.Custom Typography
+3.Reset CSS
+4.Common Button's Style
+5.Scroll Top Button Style
+6.Common Section Heading Style
+7.Main Page Wrapper Style
+8.Off-Canvas Menu Style
+9.Header Style
+10.Banner Style
+11.Sub Banner Style
+12.Single Book Banner Style
+13.About Style
+14.My Bestsellers Style
+15.Book List Style
+16.Events Style
+17.Footer Style
+
+------------------
+*/
+/* Google Fonts Link */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap");
+/* Custom Typography */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5,
+h6 {
+  font-family: "Cinzel Decorative", cursive;
+}
+
+h1, .h1 {
+  font-size: 2rem;
+}
+
+h2, .h2 {
+  font-size: 1.5rem;
+}
+
+h3, .h3 {
+  font-size: 1.17rem;
+}
+
+h4, .h4 {
+  font-size: 1rem;
+}
+
+h5, .h5 {
+  font-size: 0.83rem;
+}
+
+h6, .h6 {
+  font-size: 0.67rem;
+}
+
+/* Reset CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: #666666;
+}
+
+::selection {
+  color: #ffffff;
+  background: #666666;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: #333333;
+  font-family: "Karla", sans-serif;
+  background-color: #333333;
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+button:hover,
+button:focus,
+button:active {
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Common transition Style */
+.transition {
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+/* Common Button's Style */
+.primary-btn {
+  color: #333333;
+  font-size: 1.2rem;
+  font-family: "Cinzel Decorative", cursive;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  background: #e2c75a;
+}
+
+@media (max-width: 991px) {
+  .primary-btn {
+    font-size: 1rem;
+  }
+}
+
+.primary-btn--circle {
+  width: 3.3rem;
+  height: 3.3rem;
+}
+
+.primary-btn:hover, .primary-btn:focus {
+  color: #e2c75a;
+  background: #333333;
+}
+
+/* Scroll Top Button Style */
+.scroll-top {
+  bottom: 3%;
+  right: 2%;
+  display: none;
+  cursor: pointer;
+  z-index: 7;
+}
+
+@media (max-width: 575px) {
+  .scroll-top {
+    bottom: 2%;
+  }
+}
+
+.scroll-top__btn {
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: rgba(226, 199, 90, 0.9);
+}
+
+@media (max-width: 575px) {
+  .scroll-top__btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 0.7rem;
+  }
+}
+
+.scroll-top__btn:hover {
+  background: #ddbe40;
+}
+
+/* Common Section Gap Style */
+.section-gap {
+  padding: 5rem 0;
+}
+
+@media (max-width: 767px) {
+  .section-gap {
+    padding: 3rem 0;
+  }
+}
+
+/* Common Section Heading Style */
+.section-header {
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.section-header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: #e2c75a;
+}
+
+.section-header__title {
+  color: #333333;
+  font-size: 3rem;
+  font-weight: 600;
+  background-color: #f7f7fa;
+  padding-right: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  .section-header__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-header__title {
+    font-size: 1.5rem;
+  }
+}
+
+.section-header__title .first-letter {
+  color: #e2c75a;
+  font-size: 1.5em;
+  padding: 1rem 2rem;
+  margin-right: -1.6rem;
+  border: 0.8px solid #e2c75a;
+}
+
+/* Main Page Wrapper Style */
+.page-wrapper {
+  position: relative;
+  right: 0;
+  -webkit-transition: right .3s linear;
+  transition: right .3s linear;
+  background-color: #f7f7fa;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .page-wrapper.active {
+    right: 70vw;
+  }
+}
+
+/* Off-Canvas Menu Style */
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  -webkit-transform: translateX(70vw);
+          transform: translateX(70vw);
+  width: 70vw;
+  background: #333333;
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+  z-index: 99;
+}
+
+.off-canvas-menu.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.off-canvas-menu__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.off-canvas-menu__link {
+  position: relative;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-family: "Cinzel Decorative", cursive;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.off-canvas-menu__link::before {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  background-color: rgba(226, 199, 90, 0.4);
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.off-canvas-menu__link.active::before, .off-canvas-menu__link:hover::before, .off-canvas-menu__link:focus::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+/* Page Main Logo Style */
+.page-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.page-logo .first-letter {
+  color: #e2c75a;
+  font-size: 1.3em;
+  font-weight: 900;
+}
+
+/* Header Style */
+.header .navbar-toggler {
+  font-size: 1.5rem;
+  color: #e2c75a;
+}
+
+@media (max-width: 767px) {
+  .header .navbar-collapse {
+    display: none !important;
+  }
+}
+
+.header .navbar .nav-item {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.header .navbar .nav-link {
+  position: relative;
+  color: #333333;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Karla", sans-serif;
+  z-index: 1;
+}
+
+.header .navbar .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  background-color: rgba(226, 199, 90, 0.9);
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.header .navbar .nav-link.active::before, .header .navbar .nav-link:hover::before, .header .navbar .nav-link:focus::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+@media (max-width: 767px) {
+  .header--fixed .page-logo {
+    font-size: 1.5rem;
+  }
+}
+
+.header--fixed .header__bottom {
+  position: fixed;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.13);
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.13);
+  -webkit-animation: header_in 0.4s linear forwards;
+          animation: header_in 0.4s linear forwards;
+  z-index: 99;
+}
+
+.header--space {
+  padding-top: 63.2px;
+}
+
+@media (max-width: 767px) {
+  .header--space {
+    padding-top: 88.4px;
+  }
+}
+
+/* Header In Animation */
+@-webkit-keyframes header_in {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes header_in {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/* Banner Style */
+.banner {
+  padding: 5rem 0;
+}
+
+.banner__title {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.banner__title .first-word {
+  font-size: 1.2em;
+  line-height: 1.5;
+  font-family: "Karla", sans-serif;
+  padding: 0 1rem;
+  color: #e2c75a;
+  background-color: #333333;
+}
+
+@media (max-width: 991px) {
+  .banner__title {
+    font-size: 2rem;
+  }
+}
+
+.banner__text {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.banner__slide {
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+
+.banner__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 28rem;
+}
+
+@media (max-width: 767px) {
+  .banner__image {
+    max-height: 18rem;
+  }
+}
+
+/* Sub Banner Style */
+.sub-banner {
+  background-color: #333333;
+}
+
+.sub-banner__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.sub-banner__title::first-letter {
+  color: #e2c75a;
+}
+
+.sub-banner .breadcrumb-item {
+  font-size: 1.5rem;
+}
+
+.sub-banner .breadcrumb-item.active, .sub-banner .breadcrumb-item::before {
+  color: #f7f7fa;
+}
+
+.sub-banner .breadcrumb-link {
+  color: #e2c75a;
+}
+
+.sub-banner .breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+/* Single Book Banner Style */
+.single-book {
+  background: url(../images/single-book-bg.jpg) rgba(0, 0, 0, 0.5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
+
+/* About Style */
+.about__text {
+  font-size: 1.6rem;
+  font-family: "Karla", sans-serif;
+}
+
+@media (max-width: 991px) {
+  .about__text {
+    font-size: 1.2rem;
+  }
+}
+
+.about__text .first-letter {
+  color: transparent;
+  font-size: 4rem;
+  line-height: 0.9;
+  font-weight: 900;
+  font-family: "Cinzel Decorative", cursive;
+  margin-right: 0.5rem;
+  -webkit-text-stroke: 1.2px #666666;
+}
+
+.about__text--sm {
+  font-size: 1.3rem;
+  -webkit-text-decoration: 3px underline dotted #e2c75a;
+          text-decoration: 3px underline dotted #e2c75a;
+}
+
+@media (min-width: 576px) {
+  .about__image {
+    float: right;
+    shape-outside: url(../images/HuseinAli_transparent.png);
+    margin-left: 15px;
+    shape-margin: 15px;
+  }
+}
+
+/* My Bestsellers Style */
+.bestsellers__block__image {
+  -webkit-perspective: 600px;
+          perspective: 600px;
+}
+
+.bestsellers__block__image a {
+  -webkit-transform-origin: 35% 50%;
+          transform-origin: 35% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+@media (max-width: 767px) {
+  .bestsellers__block__image a {
+    -webkit-animation: image_hover 2s ease-in-out infinite;
+            animation: image_hover 2s ease-in-out infinite;
+    -webkit-animation-delay: calc(var(--delay) * 1.5s);
+            animation-delay: calc(var(--delay) * 1.5s);
+  }
+}
+
+.bestsellers__block__image a::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 98.5%;
+  bottom: 3px;
+  width: 45px;
+  background: repeating-linear-gradient(to right, #f5f5f5, #f5f5f5 5px, #aaa 5px, #aaa 6px);
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+}
+
+.bestsellers__block__image img {
+  max-height: 20rem;
+  max-width: 14.16rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  outline: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+  .bestsellers__block__image:hover a, .bestsellers__block__image:focus a {
+    -webkit-transform: rotateY(-45deg);
+            transform: rotateY(-45deg);
+  }
+}
+
+.bestsellers__block__image:hover img, .bestsellers__block__image:focus img {
+  -webkit-filter: grayscale(0.5);
+          filter: grayscale(0.5);
+}
+
+.bestsellers__block__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.bestsellers__block__title a {
+  color: #666666;
+}
+
+.bestsellers__block__title a:hover, .bestsellers__block__title a:focus {
+  color: #e2c75a;
+}
+
+/* Books Hover Animation */
+@-webkit-keyframes image_hover {
+  0%, 100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  50%, 60% {
+    -webkit-transform: rotateY(-45deg);
+            transform: rotateY(-45deg);
+  }
+}
+@keyframes image_hover {
+  0%, 100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  50%, 60% {
+    -webkit-transform: rotateY(-45deg);
+            transform: rotateY(-45deg);
+  }
+}
+
+/* Book List Style */
+.book-list .table {
+  white-space: nowrap;
+}
+
+.book-list .table__head {
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.book-list .table__body {
+  color: #666666;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.book-list .table__body .book-name__highlighted {
+  color: #e2c75a;
+  font-family: "Cinzel Decorative", cursive;
+}
+
+.book-list .table__body .primary-btn {
+  font-size: 1rem;
+  padding: 0.7rem 1.3rem;
+}
+
+/* Events Style */
+.events__text {
+  font-size: 1.5rem;
+  font-family: "Cinzel Decorative", cursive;
+}
+
+/* Footer Style */
+.footer .social__link {
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 1.05rem;
+  color: #363636;
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 575px) {
+  .footer .social__link {
+    width: 3rem;
+    height: 3rem;
+    font-size: 0.9rem;
+  }
+}
+
+.footer .social__link:hover, .footer .social__link:focus {
+  color: #ffffff;
+  background-color: #e2c75a;
+}
+
+.footer .copyright {
+  font-size: 1.1rem;
+  color: #666666;
+}
+
+.footer .copyright__link {
+  color: #e2c75a;
+  font-weight: 600;
+}
+
+.footer .copyright__link:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */
