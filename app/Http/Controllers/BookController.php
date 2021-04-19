@@ -7,6 +7,7 @@ use App\Book;
 use App\Booklist;
 use Illuminate\Support\Facades\Storage;
 use Image;
+use Barryvdh\DomPDF\PDF;
 
 class BookController extends Controller
 {
@@ -46,8 +47,12 @@ class BookController extends Controller
     }
     public function booklistview($id){
 
-         $pdfpath = 'storage/app/public/'.Booklist::find($id)->book_list_photo;
-         return Storage::download($pdfpath);
+        Storage::url(Booklist::find($id)->book_list_photo);
+    }
+    public function booklistdelete($id){
+        Storage::delete(Booklist::find($id)->book_list_photo);
+        Booklist::find($id)->delete();
+        return back()->with('delete_status', 'Book list deleted successfully');
     }
 
 

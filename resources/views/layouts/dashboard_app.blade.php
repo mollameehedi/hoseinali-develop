@@ -15,6 +15,7 @@
     <link href="{{ asset('dashboard_asset') }}/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/highlightjs/github.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/datatables/jquery.dataTables.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('frontend_asset') }}/plugins/fontawesome/css/all.min.css">
     <link href="{{ asset('dashboard_asset') }}/lib/select2/css/select2.min.css" rel="stylesheet">
     <link rel="icon" href="{{ asset('dashboard_asset') }}/img/favicon.png" type="image/gif" sizes="16x16">
 
@@ -52,6 +53,7 @@
         </a><!-- sl-menu-link -->
         <ul class="sl-menu-sub nav flex-column">
           <li class="nav-item"><a href="{{ route('home.banner') }}" class="nav-link">Banner</a></li>
+          <li class="nav-item"><a href="{{ route('social.index') }}" class="nav-link">Social link</a></li>
         </ul>
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">
@@ -63,6 +65,7 @@
         <ul class="sl-menu-sub nav flex-column">
           <li class="nav-item"><a href="{{ route('book.my.book') }}" class="nav-link">My Books</a></li>
           <li class="nav-item"><a href="{{ route('book.book.list') }}" class="nav-link">Book List</a></li>
+          <li class="nav-item"><a href="{{ route('bestseller.index') }}" class="nav-link">My Bestsellers</a></li>
         </ul>
 
       </div><!-- sl-sideleft-menu -->

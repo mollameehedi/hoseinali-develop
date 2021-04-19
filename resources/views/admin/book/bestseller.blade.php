@@ -9,7 +9,7 @@
     <div class="sl-pagebody">
       <div class="sl-page-title">
         <h5>Books Page</h5>
-        <p>Book List</p>
+        <p>My Books</p>
       </div><!-- sl-page-title -->
         <div class="container">
           <div class="row">
@@ -18,19 +18,23 @@
               <table class="table table-bordered" id="product_table">
 
                 <thead class="bg-prima">
-                    @if (session('delete_status'))
+                    @if (session('book_delete'))
                 <div class="alert alert-danger">
-                  {{ session('delete_status') }}
+                  {{ session('book_delete') }}
                 </div>
             @endif
                   <th>Book Name</th>
-                  <th class="text-right">Action</th>
+                  <th>Book Photo</th>
+                  <th>Action</th>
                 </thead>
                 <tbody>
-                    @foreach ($book_lists as $book_list)
+                    @foreach ($bestsellers as $bestseller)
                   <tr>
-                    <td>{{ $book_list->book_list_name }}</td>
-                    <td style="text-align:right"><a href="{{ route('book.list.view', $book_list->id) }}" class="btn btn-primary">view</a><a href="{{ route('book.list.delete',$book_list->id) }}" class="btn btn-danger">Delete</a></td>
+                    <td>{{ $bestseller->book_name }}</td>
+                    <td>
+                        <img src="{{ asset('uploads/best_seller/') }}/{{ $bestseller->book_photo }}" alt="{{ $bestseller->book_photo }}" style="height: 150px" class="img-fluid">
+                    </td>
+                    <td><a href="{{ route('best.seller.delete',$bestseller->id) }}" class="btn btn-danger">Delete</a></td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -39,23 +43,23 @@
             <div class="col-lg-4">
                 <div class="card">
                   <div class="card-header bg-info text-white">
-                    <h5>Add a new Book List</h5>
+                    <h5>Add a new Book</h5>
                   </div>
-              @if (session('book_list_added'))
+              @if (session('book_added'))
               <div class="alert alert-success">
-                {{ session('book_list_added') }}
+                {{ session('book_added') }}
               </div>
           @endif
                   <div class="card-body">
-                   <form method="post" action="{{ route('book.list.store') }}" enctype="multipart/form-data">
+                   <form method="post" action="{{ route('bestseller.store') }}" enctype="multipart/form-data">
                      @csrf
                      <div class="form-group">
-                        <label>Book Item Name</label>
-                        <input type="text" class="form-control" placeholder="Enter your book list name" name="book_list_name" required>
+                        <label>Book Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your book name" name="book_name" required>
                      </div>
                      <img class="hidden" id="tenant_photo_viewer" src="#" alt="your image" height="75" width="75"/>
                      <br>
-                    <label> Book List Item Photo <br><input type="file" name="book_list_photo" onchange="readURL(this);" required></label>
+                    <label> Book Photo <br><input type="file" name="book_photo" onchange="readURL(this);" required></label>
                     <style>
                       .hidden{
                         display: none;

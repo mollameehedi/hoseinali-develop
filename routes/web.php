@@ -24,6 +24,8 @@ Route::get('/home/banner', 'HomeController@banner')->name('home.banner');
 Route::get('/home/banner/edit', 'HomeController@banneredit')->name('home.banner.edit');
 Route::post('/home/banner/update/{id}', 'HomeController@bannerupdate')->name('home.banner.update');
 Route::get('user/delete/{user_id}', 'HomeController@userdelete')->name('user.delete');
+Route::post('home/banner/add', 'HomeController@homebanneradd')->name('home.banner.add');
+Route::get('home/banner/delete/{id}', 'HomeController@bannerimgdelete')->name('banner.img.delete');
 
 // Profile controller route start
 Route::resource('profile','ProfileController');
@@ -40,3 +42,10 @@ Route::get('deshboard/books/mybooks/delete/{id}', 'BookController@mybookdelete')
 Route::get('deshboard/books/booklist/view/{id}', 'BookController@booklistview')->name('book.list.view');
 Route::get('deshboard/books/booklist/delete/{id}', 'BookController@booklistdelete')->name('book.list.delete');
 Route::get('deshboard/books/booklist', 'BookController@booklist')->name('book.book.list');
+
+Route::resource('social', 'SocilaController');
+Route::get('social/delete/{id}', 'SocilaController@socialdelete')->name('social.delete');
+
+Route::resource('bestseller', 'BestsellerController');
+Route::get('bestseller/delete/{id}', 'BestsellerController@bestsellerdelete')->name('best.seller.delete');
+
