@@ -38,7 +38,7 @@
 
       <label class="sidebar-label">Navigation</label>
       <div class="sl-sideleft-menu">
-        <a href="index.html" class="sl-menu-link">
+        <a href="{{ url('/home') }}" class="sl-menu-link">
           <div class="sl-menu-item">
             <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
             <span class="menu-item-label">Dashboard</span>
@@ -54,6 +54,19 @@
         <ul class="sl-menu-sub nav flex-column">
           <li class="nav-item"><a href="{{ route('home.banner') }}" class="nav-link">Banner</a></li>
           <li class="nav-item"><a href="{{ route('social.index') }}" class="nav-link">Social link</a></li>
+          <li class="nav-item"><a href="{{ route('foreigner.dream') }}" class="nav-link">A Foreigner with a dream</a></li>
+          <li class="nav-item"><a href="{{ route('event.index') }}" class="nav-link">Events</a></li>
+        </ul>
+        <a href="#" class="sl-menu-link">
+          <div class="sl-menu-item">
+            <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+            <span class="menu-item-label">About</span>
+            <i class="menu-item-arrow fa fa-angle-down"></i>
+          </div><!-- menu-item -->
+        </a><!-- sl-menu-link -->
+        <ul class="sl-menu-sub nav flex-column">
+          <li class="nav-item"><a href="{{ route('about.banner') }}" class="nav-link">about banner</a></li>
+          <li class="nav-item"><a href="{{ route('about.my.bio') }}" class="nav-link">My Bio</a></li>
         </ul>
         <a href="#" class="sl-menu-link">
           <div class="sl-menu-item">

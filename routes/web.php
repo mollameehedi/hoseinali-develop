@@ -26,6 +26,10 @@ Route::post('/home/banner/update/{id}', 'HomeController@bannerupdate')->name('ho
 Route::get('user/delete/{user_id}', 'HomeController@userdelete')->name('user.delete');
 Route::post('home/banner/add', 'HomeController@homebanneradd')->name('home.banner.add');
 Route::get('home/banner/delete/{id}', 'HomeController@bannerimgdelete')->name('banner.img.delete');
+Route::get('home/foreigner/dream', 'HomeController@foreignerdream')->name('foreigner.dream');
+Route::post('home/foreigner/dream/add', 'HomeController@foreignerdreamadd')->name('foreigner.dream.add');
+Route::get('home/event', 'HomeController@event')->name('event.index');
+Route::post('home/event/update', 'HomeController@eventupdate')->name('even.upadate');
 
 // Profile controller route start
 Route::resource('profile','ProfileController');
@@ -46,6 +50,13 @@ Route::get('deshboard/books/booklist', 'BookController@booklist')->name('book.bo
 Route::resource('social', 'SocilaController');
 Route::get('social/delete/{id}', 'SocilaController@socialdelete')->name('social.delete');
 
+// bestsellre controller route start
 Route::resource('bestseller', 'BestsellerController');
 Route::get('bestseller/delete/{id}', 'BestsellerController@bestsellerdelete')->name('best.seller.delete');
 
+
+// about controller route start
+Route::get('about/banner', 'AboutController@aboutbanner')->name('about.banner');
+Route::post('about/banner/update', 'AboutController@aboutbannerupdate')->name('about.banner.update');
+Route::get('about/mybio', 'AboutController@aboutmybio')->name('about.my.bio');
+Route::post('about/mybio/update', 'AboutController@aboutmybioupdate')->name('about.my.bio.update');

@@ -47,7 +47,7 @@ class BookController extends Controller
     }
     public function booklistview($id){
 
-        Storage::url(Booklist::find($id)->book_list_photo);
+        return Storage::download(Booklist::find($id)->book_list_photo);
     }
     public function booklistdelete($id){
         Storage::delete(Booklist::find($id)->book_list_photo);

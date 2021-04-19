@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Homebanner;
 use App\Homebannerimg;
+use App\Event;
+use App\Dream;
 use Image;
 
 class HomeController extends Controller
@@ -83,5 +85,39 @@ class HomeController extends Controller
              unlink(base_path($old_photo_location));
              Homebannerimg::find($id)->delete();
              return back()->with('book_delete', 'Banner photo deleted successfully');
+    }
+    public function foreignerdream(){
+        return view('admin.home.dream',[
+            'dream' => Dream::find(1),
+
+        ]);
+    }
+    public function foreignerdreamadd(Request $request){
+
+        $old_photo_location = 'public/uploads/dream/'.Dream::find(1)->book_photo;
+                unlink(base_path($old_photo_location));
+
+       $id = 1;
+
+        $uploaded_photo = $request->file('book_photo');
+            $new_photo_name = $id.".".$uploaded_photo->getClientOriginalExtension();
+            $new_photo_location = 'public/uploads/dream/'.$new_photo_name;
+           Image::make($uploaded_photo)->save(base_path($new_photo_location));
+           Dream::find($id)->update([
+              'book_photo' =>  $new_photo_name,
+           ]);
+           return back()->with('dream_img_added', 'A Foreigner with a dream background updated successfuly');
+    }
+
+    public function event(){
+        return view('admin.home.event',[
+            'event' => Event::find(1),
+        ]);
+    }
+    public function eventupdate(Request $request){
+        Event::find(1)->update([
+            'event' =>  $request->event,
+         ]);
+         return back()->with('event_updated', 'Event Description updated successfuly');
     }
 }
