@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2021 at 11:05 AM
+-- Generation Time: Apr 20, 2021 at 12:15 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -250,7 +250,6 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2021_04_18_193823_create_homebanners_table', 2),
@@ -262,7 +261,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2021_04_19_173829_create_dreams_table', 8),
 (13, '2021_04_19_181519_create_events_table', 9),
 (14, '2021_04_19_185934_create_aboutbanners_table', 10),
-(15, '2021_04_19_190433_create_aboutbios_table', 11);
+(15, '2021_04_19_190433_create_aboutbios_table', 11),
+(16, '2014_10_12_000000_create_users_table', 12);
 
 -- --------------------------------------------------------
 
@@ -321,7 +321,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `profile_photo`, `created_at`, `updated_at`) VALUES
-(2, 'mahadi', 'mahadi@gmail.com', '2020-12-25 11:10:22', '$2y$10$V6bToOLOXguWxXw5TPfCt.PT0jL1WWtf0aEQDP74Jz20dYYg37UhK', NULL, '2.jpg', '2020-12-19 23:08:15', '2021-04-18 22:56:43');
+(1, 'admin', 'admin@gmail.com', NULL, '$2y$10$NiWEQ5J/J5MfboTsrFSglebqilpQ0xLjuh2PRk0WbqGJfpGy7XCmO', NULL, 'default.png', '2021-04-20 03:30:06', '2021-04-20 03:30:06');
 
 --
 -- Indexes for dumped tables
@@ -480,7 +480,7 @@ ALTER TABLE `homebanners`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `socials`
@@ -492,7 +492,7 @@ ALTER TABLE `socials`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
