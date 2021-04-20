@@ -10,6 +10,10 @@ use Image;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -111,7 +115,7 @@ class ProfileController extends Controller
         } else {
             return back()->withErrors('No file was uploaded');
         }
-        
+
     }
     public function profilepasswordpost(Request $request){
         $request->validate([

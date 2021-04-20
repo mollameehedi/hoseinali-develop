@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Site Title -->
-	<title>Husein Ali</title>
+	<title>@yield('title')</title>
 	<!-- Favicon Link -->
 	<link rel="icon" type="image/x-icon" href="{{ asset('frontend_asset') }}/images/favicon.ico">
 	<!-- All CSS -->
@@ -19,12 +19,12 @@
 		<!-- Main Header Section -->
 		<header class="header w-100 bg-white">
 			<div class="header__top text-center py-3 border-bottom d-none d-md-block">
-				<a class="page-logo" href="./index.html"><span class="first-letter">H</span>usein Ali</a>
+				<a class="page-logo" href="{{ route('/') }}"><span class="first-letter">H</span>usein Ali</a>
 			</div>
 			<div class="header__bottom w-100 bg-white">
 				<nav class="navbar navbar-expand-md">
 					<div class="container">
-						<a class="navbar-brand page-logo d-md-none mr-0" href="./index.html"><span class="first-letter">H</span>usein Ali</a>
+						<a class="navbar-brand page-logo d-md-none mr-0" href="{{ route('/') }}"><span class="first-letter">H</span>usein Ali</a>
 						<button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<i class="fas fa-bars"></i>
 						</button>
@@ -55,29 +55,18 @@
         <div class="row">
             <div class="col-12 text-center">
                 <ul class="social list-inline">
+                    @foreach ($social_links as $social_link)
+
+
                     <li class="social__item list-inline-item mb-2 mb-sm-0">
-                        <a href="https://www.facebook.com/coderexpertzahid/" target="_blank" class="social__link transition rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="{{ $social_link->social_link }}" target="_blank" class="social__link transition rounded-circle d-inline-flex align-items-center justify-content-center">
+                            <i class="{{ $social_link->social_icon }}"></i>
                         </a>
                     </li>
-                    <li class="social__item list-inline-item mb-2 mb-sm-0">
-                        <a href="https://twitter.com/ZahidHa45112113" target="_blank" class="social__link transition rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="social__item list-inline-item mb-2 mb-sm-0">
-                        <a href="#!" class="social__link transition rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                    <li class="social__item list-inline-item mb-2 mb-sm-0">
-                        <a href="mailto:deme@demo.com" class="social__link transition rounded-circle d-inline-flex align-items-center justify-content-center">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </li>
+                    @endforeach
                 </ul>
-                <a class="page-logo d-inline-block my-4" href="./index.html"><span class="first-letter">H</span>usein Ali</a>
-                <p class="copyright mt-4 mb-0">© COPYRIGHT <a href="./index.html" class="copyright__link">Husein Ali</a> 2021. All rights reserved.</p>
+                <a class="page-logo d-inline-block my-4" href="{{ route('/') }}"><span class="first-letter">H</span>usein Ali</a>
+                <p class="copyright mt-4 mb-0">© COPYRIGHT <a href="{{ route('/') }}" class="copyright__link">Husein Ali</a> 2021. All rights reserved.</p>
             </div>
         </div>
     </div>
@@ -87,13 +76,13 @@
 <nav id="off-canvas-menu" class="off-canvas-menu d-flex align-items-center justify-content-center h-100">
 <ul class="off-canvas-menu__nav text-center">
     <li class="off-canvas-menu__item">
-        <a class="off-canvas-menu__link transition active" onClick="location.href='index.html'">Home</a>
+        <a class="off-canvas-menu__link transition active" onClick="location.href='{{ route('/') }}'">Home</a>
     </li>
     <li class="off-canvas-menu__item">
-        <a class="off-canvas-menu__link transition" onClick="location.href='books.html'">Books</a>
+        <a class="off-canvas-menu__link transition" onClick="location.href='{{ route('books') }}'">Books</a>
     </li>
     <li class="nav-item">
-        <a class="off-canvas-menu__link transition" onClick="location.href='about.html'">About</a>
+        <a class="off-canvas-menu__link transition" onClick="location.href='{{ route('about') }}'">About</a>
     </li>
 </ul>
 </nav>

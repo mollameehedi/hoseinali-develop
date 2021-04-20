@@ -10,6 +10,12 @@ use Image;
 
 class AboutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function aboutbanner(){
         return view('admin.about.banner.index',[
             'aboutbanner' => Aboutbanner::find(1),

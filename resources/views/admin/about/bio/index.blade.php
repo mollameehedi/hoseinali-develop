@@ -1,4 +1,13 @@
 @extends('layouts.dashboard_app')
+@section('title')
+        About | My Bio
+    @endsection
+@section('about')
+    active
+@endsection
+@section('about_bio')
+    active
+@endsection
 @section('dashboard_content')
 <div class="sl-mainpanel">
     <nav class="breadcrumb sl-breadcrumb">

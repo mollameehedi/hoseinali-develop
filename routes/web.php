@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontendController@index')->name('/');
 Route::get('books', 'FrontendController@books')->name('books');
 Route::get('about', 'FrontendController@about')->name('about');
+Route::get('book/list/download/{id}', 'FrontendController@booklistdownload')->name('book.list.download');
 
 Auth::routes(['verify' => true]);
 

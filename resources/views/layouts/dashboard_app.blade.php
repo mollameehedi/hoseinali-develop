@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>@yield('title', 'Ecommerce')</title>
+    <title>@yield('title', 'Husein Ali')</title>
 
     <!-- vendor css -->
 
@@ -15,7 +15,7 @@
     <link href="{{ asset('dashboard_asset') }}/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/highlightjs/github.css" rel="stylesheet">
     <link href="{{ asset('dashboard_asset') }}/lib/datatables/jquery.dataTables.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('frontend_asset') }}/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('dashboard_asset') }}/css/all.min.css">
     <link href="{{ asset('dashboard_asset') }}/lib/select2/css/select2.min.css" rel="stylesheet">
     <link rel="icon" href="{{ asset('dashboard_asset') }}/img/favicon.png" type="image/gif" sizes="16x16">
 
@@ -27,60 +27,55 @@
   <body>
 
     <!-- ########## START: LEFT PANEL ########## -->
-    <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i> starlight</a></div>
+    <div class="sl-logo"><a href=""><i class="icon ion-android-star-outline"></i> Husein Ali</a></div>
     <div class="sl-sideleft">
-      <div class="input-group input-group-search">
-        <input type="search" name="search" class="form-control" placeholder="Search">
-        <span class="input-group-btn">
-          <button class="btn"><i class="fa fa-search"></i></button>
-        </span><!-- input-group-btn -->
-      </div><!-- input-group -->
+
 
       <label class="sidebar-label">Navigation</label>
       <div class="sl-sideleft-menu">
-        <a href="{{ url('/home') }}" class="sl-menu-link">
+        <a href="{{ url('/home') }}" class="sl-menu-link @yield('deshboard')">
           <div class="sl-menu-item">
-            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <i class="fas fa-house-user tx-22"></i>
             <span class="menu-item-label">Dashboard</span>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
-        <a href="#" class="sl-menu-link">
+        <a href="#" class="sl-menu-link @yield('home')">
           <div class="sl-menu-item">
-            <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+            <i class="fas fa-home tx-20"></i>
             <span class="menu-item-label">home</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
         <ul class="sl-menu-sub nav flex-column">
-          <li class="nav-item"><a href="{{ route('home.banner') }}" class="nav-link">Banner</a></li>
-          <li class="nav-item"><a href="{{ route('social.index') }}" class="nav-link">Social link</a></li>
-          <li class="nav-item"><a href="{{ route('foreigner.dream') }}" class="nav-link">A Foreigner with a dream</a></li>
-          <li class="nav-item"><a href="{{ route('event.index') }}" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="{{ route('home.banner') }}" class="nav-link @yield('home_banner')">Banner</a></li>
+          <li class="nav-item"><a href="{{ route('social.index') }}" class="nav-link @yield('social')">Social link</a></li>
+          <li class="nav-item"><a href="{{ route('foreigner.dream') }}" class="nav-link @yield('dream')">A Foreigner with a dream</a></li>
+          <li class="nav-item"><a href="{{ route('event.index') }}" class="nav-link @yield('events')">Events</a></li>
         </ul>
-        <a href="#" class="sl-menu-link">
+
+        <a href="#" class="sl-menu-link @yield('book')">
           <div class="sl-menu-item">
-            <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
-            <span class="menu-item-label">About</span>
-            <i class="menu-item-arrow fa fa-angle-down"></i>
-          </div><!-- menu-item -->
-        </a><!-- sl-menu-link -->
-        <ul class="sl-menu-sub nav flex-column">
-          <li class="nav-item"><a href="{{ route('about.banner') }}" class="nav-link">about banner</a></li>
-          <li class="nav-item"><a href="{{ route('about.my.bio') }}" class="nav-link">My Bio</a></li>
-        </ul>
-        <a href="#" class="sl-menu-link">
-          <div class="sl-menu-item">
-            <i class="menu-item-icon ion-ios-pie-outline tx-20"></i>
+            <i class="fa fa-book tx-20"></i>
             <span class="menu-item-label">Books</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- sl-menu-link -->
         <ul class="sl-menu-sub nav flex-column">
-          <li class="nav-item"><a href="{{ route('book.my.book') }}" class="nav-link">My Books</a></li>
-          <li class="nav-item"><a href="{{ route('book.book.list') }}" class="nav-link">Book List</a></li>
-          <li class="nav-item"><a href="{{ route('bestseller.index') }}" class="nav-link">My Bestsellers</a></li>
+          <li class="nav-item"><a href="{{ route('book.my.book') }}" class="nav-link @yield('mybook')">My Books</a></li>
+          <li class="nav-item"><a href="{{ route('book.book.list') }}" class="nav-link @yield('booklist')">Book List</a></li>
+          <li class="nav-item"><a href="{{ route('bestseller.index') }}" class="nav-link @yield('bestseller')">My Bestsellers</a></li>
         </ul>
-
+        <a href="#" class="sl-menu-link @yield('about')">
+            <div class="sl-menu-item">
+              <i class="fas fa-address-card tx-20"></i>
+              <span class="menu-item-label">About</span>
+              <i class="menu-item-arrow fa fa-angle-down"></i>
+            </div><!-- menu-item -->
+          </a><!-- sl-menu-link -->
+          <ul class="sl-menu-sub nav flex-column">
+            <li class="nav-item"><a href="{{ route('about.banner') }}" class="nav-link @yield('about_banner')">about banner</a></li>
+            <li class="nav-item"><a href="{{ route('about.my.bio') }}" class="nav-link @yield('about_bio')">My Bio</a></li>
+          </ul>
       </div><!-- sl-sideleft-menu -->
 
       <br>
@@ -104,10 +99,6 @@
               <ul class="list-unstyled user-profile-nav">
                 <li><a href="{{ Route('profile.index') }}"><i class="icon ion-ios-person-outline"></i> Edit Profile</a></li>
                 <li><a href="{{ route('register') }}"><i class="icon ion-ios-person-outline"></i>Register A person</a></li>
-                <li><a href=""><i class="icon ion-ios-gear-outline"></i> Settings</a></li>
-                <li><a href=""><i class="icon ion-ios-download-outline"></i> Downloads</a></li>
-                <li><a href=""><i class="icon ion-ios-star-outline"></i> Favorites</a></li>
-                <li><a href=""><i class="icon ion-ios-folder-outline"></i> Collections</a></li>
                 <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
                   <i class="icon ion-power"></i> Sign Out</a>
@@ -119,14 +110,7 @@
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
         </nav>
-        <div class="navicon-right">
-          <a id="btnRightMenu" href="" class="pos-relative">
-            <i class="icon ion-ios-bell-outline"></i>
-            <!-- start: if statement -->
-            <span class="square-8 bg-danger"></span>
-            <!-- end: if statement -->
-          </a>
-        </div><!-- navicon-right -->
+
       </div><!-- sl-header-right -->
     </div><!-- sl-header -->
     <!-- ########## END: HEAD PANEL ########## -->

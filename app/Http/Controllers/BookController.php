@@ -11,6 +11,11 @@ use Barryvdh\DomPDF\PDF;
 
 class BookController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function mybook(){
         return view('admin.book.mybook',[
             'books' => Book::latest()->get()

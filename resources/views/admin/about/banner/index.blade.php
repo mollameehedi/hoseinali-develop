@@ -1,4 +1,13 @@
 @extends('layouts.dashboard_app')
+    @section('title')
+        About | Banner
+    @endsection
+@section('about')
+    active
+@endsection
+@section('about_banner')
+    active
+@endsection
 @section('dashboard_content')
 <div class="sl-mainpanel">
     <nav class="breadcrumb sl-breadcrumb">
@@ -46,11 +55,11 @@
                      <div class="form-group">
                         <label>Banner Description</label>
 
-                        <input type="text" class="form-control" name="description" required>
+                        <input type="text" class="form-control" name="description" value="{{ $aboutbanner->description }}" required>
                      </div>
                      <img class="hidden" id="tenant_photo_viewer" src="#" alt="your image" height="75" width="75"/>
                      <br>
-                    <label><input type="file" name="photo" onchange="readURL(this);" required></label>
+                    <label><input type="file" name="photo" onchange="readURL(this);" ></label>
                     <style>
                       .hidden{
                         display: none;

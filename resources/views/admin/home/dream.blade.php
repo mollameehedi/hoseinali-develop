@@ -1,4 +1,13 @@
 @extends('layouts.dashboard_app')
+@section('title')
+        Home | Dream
+    @endsection
+    @section('home')
+        active
+    @endsection
+    @section('dream')
+        active
+    @endsection
 @section('dashboard_content')
 <div class="sl-mainpanel">
     <nav class="breadcrumb sl-breadcrumb">

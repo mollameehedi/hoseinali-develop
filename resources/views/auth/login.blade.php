@@ -76,7 +76,7 @@
 
 @extends('layouts.singn_app')
 @section('singn_content')
-    
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
         <div class="form-group">
@@ -93,8 +93,7 @@
           <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>
           </span>
-      @enderror                                    
-          <a href="{{ route('password.request') }}" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>
+      @enderror
         </div><!-- form-group -->
         <button type="submit" class="btn btn-info btn-block">Sign In</button>
          </form>
