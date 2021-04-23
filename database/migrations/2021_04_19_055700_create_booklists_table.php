@@ -17,6 +17,7 @@ class CreateBooklistsTable extends Migration
             $table->id();
             $table->string('book_list_name');
             $table->string('book_list_photo')->default('book_list.jpg');
+            $table->string('book_no')->nullable();
             $table->timestamps();
         });
     }

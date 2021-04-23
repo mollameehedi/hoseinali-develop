@@ -105,7 +105,7 @@ Husein Ali
                                     @foreach ($book_lists as $book_list)
 								  <tr>
 									<th scope="row">1</th>
-									<td class="book-name">{{ $book_list->book_list_name }}</td>
+									<td class="book-name">{{ $book_list->book_list_name }}  <span class="book-name__highlighted">{{ $book_list->book_no }}</span></td>
 									<td class="text-center">
 										<a href="{{ route('books') }}" class="primary-btn d-inline-block transition">Read Book</a>
 										<a href="{{ route('book.list.download',$book_list->id) }}" class="primary-btn primary-btn--circle rounded-circle p-0 ml-3 d-inline-flex align-items-center justify-content-center transition">

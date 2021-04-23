@@ -36,7 +36,7 @@
                   <tr>
                       <td>{{ $aboutbio->description1}}"</td>
                       <td>{{ $aboutbio->description2}}"</td>
-                    <td class="wd-200"><img src="{{ asset('uploads/about_banner/') }}/{{ $aboutbio->photo }}" alt="{{ $aboutbio->photo }}" style="width: 350px!important" class="img-fluid"></td>
+                    <td class="wd-200"><img src="{{ asset('uploads/about_bio/') }}/{{ $aboutbio->photo }}" alt="{{ $aboutbio->photo }}" style="width: 350px!important" class="img-fluid"></td>
                 </tr>
                 </tbody>
               </table>

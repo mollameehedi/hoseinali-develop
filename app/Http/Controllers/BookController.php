@@ -64,7 +64,8 @@ class BookController extends Controller
 
     public function bookliststore(Request $request){
         $book_list_id = Booklist::insertGetId([
-            'book_list_name' => $request->book_list_name
+            'book_list_name' => $request->book_list_name,
+            'book_no' => $request->book_no
         ]);
         $uploaded_file = $request->file('book_list_photo')->store('book_pdf');
                Booklist::find($book_list_id)->update([

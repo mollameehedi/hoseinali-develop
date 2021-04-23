@@ -33,13 +33,15 @@
                 </div>
             @endif
                   <th>Book Name</th>
+                  <th>Book Number</th>
                   <th class="text-right">Action</th>
                 </thead>
                 <tbody>
                     @foreach ($book_lists as $book_list)
                   <tr>
                     <td>{{ $book_list->book_list_name }}</td>
-                    <td style="text-align:right"><a href="{{ route('book.list.view', $book_list->id) }}" class="btn btn-primary">view</a><a href="{{ route('book.list.delete',$book_list->id) }}" class="btn btn-danger">Delete</a></td>
+                    <td>{{ $book_list->book_no }}</td>
+                    <td style="text-align:right"><a href="{{ route('book.list.view', $book_list->id) }}" class="btn btn-primary">download</a><a href="{{ route('book.list.delete',$book_list->id) }}" class="btn btn-danger">Delete</a></td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -61,6 +63,10 @@
                      <div class="form-group">
                         <label>Book Item Name</label>
                         <input type="text" class="form-control" placeholder="Enter your book list name" name="book_list_name" required>
+                     </div>
+                     <div class="form-group">
+                        <label>Book No</label>
+                        <input type="text" class="form-control" placeholder="Enter your book no" name="book_no">
                      </div>
                      <img class="hidden" id="tenant_photo_viewer" src="#" alt="your image" height="75" width="75"/>
                      <br>
