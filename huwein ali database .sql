@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2021 at 12:15 PM
+-- Generation Time: Apr 23, 2021 at 08:30 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -98,6 +98,7 @@ CREATE TABLE `booklists` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `book_list_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `book_list_photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'book_list.jpg',
+  `book_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -106,9 +107,10 @@ CREATE TABLE `booklists` (
 -- Dumping data for table `booklists`
 --
 
-INSERT INTO `booklists` (`id`, `book_list_name`, `book_list_photo`, `created_at`, `updated_at`) VALUES
-(13, 'Art Design', 'book_pdf/Cy8LLAsB8878uVB9Jo2ma2DSVdgflVFpE4E5dwTv.pdf', NULL, '2021-04-19 11:48:33'),
-(14, 'mehedi', 'book_pdf/kUhz5u8kpBXTzvpFpElXPbfigxuDCkiPOtMsD20I.png', NULL, '2021-04-19 23:56:39');
+INSERT INTO `booklists` (`id`, `book_list_name`, `book_list_photo`, `book_no`, `created_at`, `updated_at`) VALUES
+(1, 'Art Design', 'book_pdf/hc4ZvJYqiqC2VfPTLCCUT349ZsNWD86dLsozqI7z.png', NULL, NULL, '2021-04-23 00:16:10'),
+(2, 'A Foreigner with a Dream', 'book_pdf/a6vhfuKPTdoa22eGWagnfLr4FmkpOBA6wrvSz11K.png', 'S-01', NULL, '2021-04-23 00:20:22'),
+(3, 'A Foreigner with a Dream', 'book_pdf/ukPaofWS5Zi73N4ryQget2W6M91sEchvAG9xy12Q.pdf', NULL, NULL, '2021-04-23 00:21:49');
 
 -- --------------------------------------------------------
 
@@ -255,14 +257,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2021_04_18_193823_create_homebanners_table', 2),
 (5, '2021_04_18_194456_create_homebannerimgs_table', 3),
 (7, '2021_04_19_043200_create_books_table', 4),
-(9, '2021_04_19_055700_create_booklists_table', 5),
 (10, '2021_04_19_114040_create_socials_table', 6),
 (11, '2021_04_19_133827_create_bestsellers_table', 7),
 (12, '2021_04_19_173829_create_dreams_table', 8),
 (13, '2021_04_19_181519_create_events_table', 9),
 (14, '2021_04_19_185934_create_aboutbanners_table', 10),
 (15, '2021_04_19_190433_create_aboutbios_table', 11),
-(16, '2014_10_12_000000_create_users_table', 12);
+(16, '2014_10_12_000000_create_users_table', 12),
+(17, '2021_04_19_055700_create_booklists_table', 13);
 
 -- --------------------------------------------------------
 
@@ -438,7 +440,7 @@ ALTER TABLE `bestsellers`
 -- AUTO_INCREMENT for table `booklists`
 --
 ALTER TABLE `booklists`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `books`
@@ -480,7 +482,7 @@ ALTER TABLE `homebanners`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `socials`
